@@ -1,4 +1,7 @@
 import math as m
+import time
+from random import randint
+from os import system
 
 def exe1() -> None:
     for i in range(10):
@@ -107,3 +110,125 @@ def exe16() -> None:
     for i in [0, 1, 2, 3, 4, 5]:
         for j in [0,1,2,3,4,5,6,7,8,9,10]:
             print(f"{i} x {j} = {i * j}")
+
+def exe17() -> None:
+    result: float = 0
+
+    while(True):
+        num: float = float(input("Digite um Numero: "))
+
+        if(num > 100):
+            break
+        else:
+            result += num
+    print(f"O resultado é: {result:.2f}")
+
+def exe18() -> None:
+    result: float = 0
+
+    for i in range(100):
+        if((i + 1) % 2 == 0):
+            result += (i + 1)
+    
+    print(f"O Resultado é: {result:.2f}")
+
+def exe19() -> None:
+    num: int = 10
+
+    while(True):
+        if(num != 0):
+            print(num)
+            num -= 1
+            time.sleep(1)
+        else:
+            break   
+
+def exe20() -> None:
+    result: float = 0
+
+    while(True):
+        num: float = float(input("Digite um Número: "))
+
+        if(num != 0):
+            result += num
+        else:
+            break
+    
+    print(f"O Resultado é: {result:.2f}")
+
+def exe21() -> None:
+    num: int = int(input("Digite um número: "))
+
+    for i in range (11):
+        print(f"{i} x {num} = {num * i}")
+
+def exe22() -> None:
+    for i in range(20):
+        if((i + 1) % 2 == 0):
+            print(i + 1)
+
+def exe23() -> None:
+    num: int = randint(0, 100)
+    
+    print(num)
+
+    while(True):
+        if(num == int(input("Digite um Numero: "))):
+            print("Acertou")
+            break
+        else:
+            print("Tente de Novo")
+
+def exe24() -> None:
+    result: float = 1
+    num: int = int(input("Digite um número: "))
+
+    while(num != 1):
+        result *= num
+        num -= 1
+    print(result)
+
+def exe25() -> None:
+    lista: tuple = {
+        "Arroz",
+        "feijão",
+        "leite"
+    }
+
+    for i in lista:
+        print(i)
+
+def exe26() -> None:
+    num: int = int(input("Digite um número: "))
+    aux: int = num - 1
+
+    while(aux > 0):
+        if(num % aux != 0):
+            print(f"{num} $ {aux}")
+            aux -= 1
+        else:
+            if(aux == 1):
+                print("é primo")
+            else:
+                print("nâo é primo")
+            break
+            
+def exe27() -> None:
+    result: list = [0, 1]
+
+    for i in range(10):
+        result.append(result[i] + (result[i + 1]))
+
+    print(result)
+
+def exe28() -> None:
+    def menu() -> str:
+        print("1 - Menu")
+        print("0 - Sair")
+    
+    while(True):
+        if(int(input("Digite a opção: ")) == 0):
+            break
+        else:
+            system('cls')
+            menu()
